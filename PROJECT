@@ -1,0 +1,16 @@
+domain: k8s.appscode.com
+layout:
+- go.kubebuilder.io/v3
+multigroup: true
+projectName: secrets-store-reader
+repo: kubevault.dev/secrets-store-reader
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  domain: k8s.appscode.com
+  group: identity
+  kind: WhoAmI
+  path: kubevault.dev/secrets-store-reader/apis/reader/v1alpha1
+  version: v1alpha1
+version: "3"
