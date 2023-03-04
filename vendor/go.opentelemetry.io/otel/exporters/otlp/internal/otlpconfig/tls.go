@@ -47,7 +47,7 @@ kbQ/kxzi9Ego0ZJdiXxkmv/C05QFddCW7Y0ZsJCLHGogQsYnWJBXUZOV
 // ReadTLSConfigFromFile reads a PEM certificate file and creates
 // a tls.Config that will use this certifate to verify a server certificate.
 func ReadTLSConfigFromFile(path string) (*tls.Config, error) {
-	b, err := ioutil.ReadFile(path)
+	b, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}

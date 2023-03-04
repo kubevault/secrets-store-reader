@@ -152,7 +152,7 @@ func (c *processCollector) reportError(ch chan<- Metric, desc *Desc, err error) 
 // It is meant to be used for the PidFn field in ProcessCollectorOpts.
 func NewPidFileFn(pidFilePath string) func() (int, error) {
 	return func() (int, error) {
-		content, err := ioutil.ReadFile(pidFilePath)
+		content, err := os.ReadFile(pidFilePath)
 		if err != nil {
 			return 0, fmt.Errorf("can't read pid file %q: %+v", pidFilePath, err)
 		}

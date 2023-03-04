@@ -1039,7 +1039,7 @@ func (spt *ServicePrincipalToken) refreshInternal(ctx context.Context, resource 
 
 	logger.Instance.WriteResponse(resp, logger.Filter{Body: authBodyFilter})
 	defer resp.Body.Close()
-	rb, err := ioutil.ReadAll(resp.Body)
+	rb, err := io.ReadAll(resp.Body)
 
 	if resp.StatusCode != http.StatusOK {
 		if err != nil {
