@@ -32,7 +32,7 @@ import (
 func ApplyGRPCEnvConfigs(cfg *Config) {
 	e := EnvOptionsReader{
 		GetEnv:   os.Getenv,
-		ReadFile: ioutil.ReadFile,
+		ReadFile: os.ReadFile,
 	}
 
 	e.ApplyGRPCEnvConfigs(cfg)
@@ -41,7 +41,7 @@ func ApplyGRPCEnvConfigs(cfg *Config) {
 func ApplyHTTPEnvConfigs(cfg *Config) {
 	e := EnvOptionsReader{
 		GetEnv:   os.Getenv,
-		ReadFile: ioutil.ReadFile,
+		ReadFile: os.ReadFile,
 	}
 
 	e.ApplyHTTPEnvConfigs(cfg)

@@ -64,7 +64,7 @@ func exchangeToken(ctx context.Context, endpoint string, request *stsTokenExchan
 	}
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(io.LimitReader(resp.Body, 1<<20))
+	body, err := io.ReadAll(io.LimitReader(resp.Body, 1<<20))
 	if err != nil {
 		return nil, err
 	}

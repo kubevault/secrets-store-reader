@@ -182,7 +182,7 @@ func isSocketSpaceError(err error) bool {
 
 // tempFd creates a temporary, unlinked file under `/dev/shm`.
 func tempFd() (*os.File, error) {
-	file, err := ioutil.TempFile("/dev/shm/", "journal.XXXXX")
+	file, err := os.CreateTemp("/dev/shm/", "journal.XXXXX")
 	if err != nil {
 		return nil, err
 	}

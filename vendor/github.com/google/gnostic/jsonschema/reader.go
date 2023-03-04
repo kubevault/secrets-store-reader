@@ -45,7 +45,7 @@ func NewBaseSchema() (schema *Schema, err error) {
 // NewSchemaFromFile reads a schema from a file.
 // Currently this assumes that schemas are stored in the source distribution of this project.
 func NewSchemaFromFile(filename string) (schema *Schema, err error) {
-	file, err := ioutil.ReadFile(filename)
+	file, err := os.ReadFile(filename)
 	if err != nil {
 		return nil, err
 	}

@@ -321,7 +321,7 @@ func (fl *fileLoader) Load(path string) ([]byte, error) {
 			}
 			return nil, fmt.Errorf("%w: status code %d (%s)", ErrorHTTP, resp.StatusCode, http.StatusText(resp.StatusCode))
 		}
-		body, err := ioutil.ReadAll(resp.Body)
+		body, err := io.ReadAll(resp.Body)
 		if err != nil {
 			return nil, err
 		}
